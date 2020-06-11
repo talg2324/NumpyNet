@@ -244,8 +244,6 @@ def training(data,train_params,model):
     plt.legend(['training','validation'], loc='upper left')
     plt.show()
 
-    output_json(model)
-
 def get_data(file_path,obj_type,class_names,class_num):
     
     # sorting a label list, and total objects size
@@ -266,40 +264,6 @@ def get_data(file_path,obj_type,class_names,class_num):
         lines=np.array(lines)/255
          
     return lines, labels
-
-def output_json(model):
-
-    weights = (
-        model.layer0.w.tolist(), 
-        model.layer1.w.tolist(), 
-        model.layer2.w.tolist(),
-        model.layer3.w.tolist()
-        )
-
-    biases = (
-        model.layer0.b.tolist(), 
-        model.layer1.b.tolist(), 
-        model.layer2.b.tolist(),
-        model.layer3.b.tolist()
-        )
-
-    trained_dict = {
-        'weights':weights,
-        'biases':biases,
-        'nn_hdim':2048,
-        'activation_1':'ReLU',
-        'activation_2':'ReLU',
-        'activation_3':'ReLU',
-        'activation_4':'sigmoid',
-        'IDs':(205776909, 203664743)
-            }
-
-    file_path = os.path.join('./trained_dict_{}_{}'.format(
-                            trained_dict.get('IDs')[0], trained_dict.get('IDs')[1])
-                        )
-
-    with open(file_path, 'w') as f:
-        json.dump(trained_dict, f, indent=4)
 
 if __name__ == "__main__":
 
