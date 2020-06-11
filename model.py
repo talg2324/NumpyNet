@@ -5,7 +5,6 @@ from matplotlib import pyplot as plt
 from PIL import Image
 import deeplearning as dl
 from scipy import interpolate
-import json
 
 class NN1D():
 
