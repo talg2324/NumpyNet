@@ -7,14 +7,16 @@ The use of backpropagation gradient descent, batches of training data and dropou
 
 Two main Classes in this code: NN1D and nnlayer. 
 
-NN1D = constract the NN model by utilizing the 'nnlayer' class, 
-       backward pass function - backpropegation
-       step function - update gradients
+#NN1D 
+constract the NN model by utilizing the 'nnlayer' class
+backward pass function - backpropegation
+step function - update gradients
        
-nnlayer = initilize layers
-          forward pass function 
-          loss function
-          accuracy function 
+#nnlayer  
+initilize layers
+forward pass function 
+loss function
+accuracy function 
 
 
 
